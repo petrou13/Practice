@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/curWeatherFragment">
+
+    <fragment
+        android:id="@+id/curWeatherFragment"
+        android:name="com.example.practice.curWeatherFragment"
+        android:label="cur_weather_fragment"
+        tools:layout="@layout/cur_weather_fragment" />
+    <fragment
+        android:id="@+id/cityFragment"
+        android:name="com.example.practice.CityFragment"
+        android:label="city_fragment"
+        tools:layout="@layout/city_fragment" />
+</navigation>

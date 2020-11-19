@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/curWeatherFragment"
+        android:icon="@drawable/ic_baseline_cloud_24"
+        android:title="@string/curWeather"/>
+
+    <item
+        android:id="@+id/cityFragment"
+        android:icon="@drawable/ic_baseline_location_city_24"
+        android:title="@string/curCity"/>
+
+
+</menu>

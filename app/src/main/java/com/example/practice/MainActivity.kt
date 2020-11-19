@@ -15,13 +15,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolBar)
+
 
         navController = Navigation.findNavController(this, R.id.frgHost)
         btmNavigation.setupWithNavController(navController)
-
-        NavigationUI.setupActionBarWithNavController(this, navController)
-
 
     }
 

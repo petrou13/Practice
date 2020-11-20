@@ -13,5 +13,5 @@ interface OpenWeatherAPI {
     fun getCurrentWeather(
         @Query("q") location: String,
         @Query("lang") languageCode: String = "en"
-    ): Deffered<CurrentWeatherJSON>
+    ): CurrentWeatherJSON
 }

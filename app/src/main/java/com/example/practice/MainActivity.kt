@@ -16,13 +16,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         navController = Navigation.findNavController(this, R.id.frgHost)
         btmNavigation.setupWithNavController(navController)
 
     }
-
-
 
     override fun onSupportNavigateUp(): Boolean {
         return NavigationUI.navigateUp(navController, null)

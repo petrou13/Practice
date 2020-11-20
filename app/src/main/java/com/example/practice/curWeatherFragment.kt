@@ -34,7 +34,7 @@ class curWeatherFragment : Fragment() {
 
         val apiService = OpenWeatherAPI()
 
-        GlobalScope.launch(Dispatchers.Main) {                                                        //так делать не надо, ТОЛЬКО ДЛЯ ТЕСТА
+        GlobalScope.launch(Dispatchers.Main) {                                                        //тест
             val currentWeatherJSON = apiService.getCurrentWeather("Moscow").await()
             txtWeather.text = currentWeatherJSON.toString()
         }

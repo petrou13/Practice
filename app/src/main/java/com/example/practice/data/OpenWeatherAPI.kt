@@ -1,5 +1,6 @@
 package com.example.practice.data
 
+import com.example.practice.data.dbase.weather.CurrentWeatherJSON
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import kotlinx.coroutines.Deferred
 import okhttp3.Interceptor
@@ -11,17 +12,18 @@ import retrofit2.http.Query
 
 const val API_KEY = "8ab72bdfc20efd0e159b98d001f704b8"
 
-//https://api.openweathermap.org/data/2.5/weather?q=Moscow&appid=8ab72bdfc20efd0e159b98d001f704b8&lang=en
+//https://api.openweathermap.org/data/2.5/weather?q=Moscow&appid=8ab72bdfc20efd0e159b98d001f704b8&lang=en&units=metric
 
 interface OpenWeatherAPI {
 
     @GET("weather")
     fun getCurrentWeather(
         @Query("q") location: String,  //город
-        @Query("lang") languageCode: String = "ru" //используемый язык
+        @Query("lang") languageCode: String = "ru", //используемый язык
+        @Query("units") measurement: String = "metric"  //система счисления
     ): Deferred<CurrentWeatherJSON>  //выполнение асинхронно
 
-    companion object{  //вместо OpenWeatherAPI.invoke() можно теперь писать только OpenWeatherAPI()
+    companion object{  //чтобы вместо OpenWeatherAPI.invoke() можно теперь писать только OpenWeatherAPI()
         operator fun invoke(): OpenWeatherAPI{
              val requestInterceptor = Interceptor {chain ->    //используем перехватчик, чтобы добавить к ссылке ключ
                 val url = chain.request()  //переходим на ключ

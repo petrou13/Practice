@@ -1,4 +1,4 @@
-package com.example.practice.data
+package com.example.practice.data.dbase.weather
 
 
 import com.google.gson.annotations.SerializedName
@@ -6,8 +6,6 @@ import com.google.gson.annotations.SerializedName
 data class Main(
     @SerializedName("feels_like")
     val feelsLike: Double,
-    val humidity: Int,
-    val pressure: Int,
     val temp: Double,
     @SerializedName("temp_max")
     val tempMax: Double,
